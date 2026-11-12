@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carga Certa | Educação Física na Musculação</title>
+  <meta name="description" content="Fundamentos, treinos por grupo muscular e calculadora de 1RM para quem treina musculação.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="marca" href="#inicio">Carga Certa</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="nav" id="menu" aria-label="Principal">
+      <a href="#fundamentos">Fundamentos</a>
+      <a href="#treinos">Treinos</a>
+      <a href="#calculadora">Calculadora</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <h1>Monte a barra. Entenda a carga.</h1>
+        <p>Educação física aplicada à musculação: princípios do treino, exercícios por grupo muscular e uma calculadora para planejar suas cargas.</p>
+      </div>
+
+      <div class="bancada">
+        <div class="barra" id="barra" aria-hidden="true">
+          <div class="lado esq" id="ladoEsq"></div>
+          <div class="haste"></div>
+          <div class="lado dir" id="ladoDir"></div>
+        </div>
+        <p class="total" aria-live="polite">Carga total: <strong id="total">20 kg</strong></p>
+        <p class="aviso-barra" id="avisoBarra">Barra olímpica de 20 kg. Os discos entram nos dois lados.</p>
+        <div class="botoes-disco" id="botoesDisco"></div>
+        <div class="acoes">
+          <button type="button" class="btn-sec" id="desfazer">Desfazer</button>
+          <button type="button" class="btn-sec" id="limpar">Limpar barra</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="fundamentos">
+      <h2>Fundamentos do treino</h2>
+      <dl class="fundamentos">
+        <div>
+          <dt>Sobrecarga progressiva</dt>
+          <dd>O músculo se adapta ao que recebe. Para continuar evoluindo, aumente aos poucos a carga, as repetições ou o volume semanal.</dd>
+        </div>
+        <div>
+          <dt>Técnica antes da carga</dt>
+          <dd>Amplitude completa, controle na descida e postura estável protegem as articulações e deixam o estímulo no músculo certo.</dd>
+        </div>
+        <div>
+          <dt>Descanso e recuperação</dt>
+          <dd>O músculo cresce na recuperação, não durante a série. Dormir bem e respeitar o intervalo entre treinos do mesmo grupo faz diferença.</dd>
+        </div>
+        <div>
+          <dt>Constância</dt>
+          <dd>Um plano simples seguido por meses rende mais do que um plano perfeito abandonado em duas semanas.</dd>
+        </div>
+        <div>
+          <dt>Segurança</dt>
+          <dd>Aqueça antes de começar, use as travas da barra e procure um profissional de Educação Física para avaliar seu nível e ajustar o treino.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="secao secao-clara" id="treinos">
+      <h2>Treino por grupo muscular</h2>
+      <p class="intro">Escolha um grupo para ver os músculos envolvidos, exemplos de exercícios e uma dica de execução.</p>
+
+      <div class="abas" role="tablist" aria-label="Grupos musculares" id="abas"></div>
+
+      <div class="painel" id="painel" role="tabpanel" tabindex="0">
+        <h3 id="painelTitulo"></h3>
+        <p class="musculos" id="painelMusculos"></p>
+        <table class="tabela">
+          <thead><tr><th>Exercício</th><th>Séries × repetições</th></tr></thead>
+          <tbody id="painelLista"></tbody>
+        </table>
+        <p class="dica" id="painelDica"></p>
+      </div>
+    </section>
+
+    <section class="secao" id="calculadora">
+      <h2>Calculadora de 1RM</h2>
+      <p class="intro">1RM é a maior carga que você levantaria em uma única repetição. Informe uma série que você fez e veja uma estimativa.</p>
+
+      <div class="calc">
+        <label>Carga usada (kg)
+          <input type="number" id="calcCarga" min="1" step="0.5" value="60" inputmode="decimal">
+        </label>
+        <label>Repetições feitas (1 a 12)
+          <input type="number" id="calcReps" min="1" max="12" step="1" value="8" inputmode="numeric">
+        </label>
+        <button type="button" class="btn" id="calcBtn">Calcular</button>
+      </div>
+
+      <p class="resultado" id="resultado" aria-live="polite"></p>
+
+      <table class="tabela" id="tabelaPct" hidden>
+        <thead><tr><th>% do 1RM</th><th>Carga</th><th>Foco comum</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="nota">Estimativa pela fórmula de Epley. Fica mais confiável com séries de até 10 repetições.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Conteúdo educativo. Não substitui a orientação de um profissional de Educação Física ou de saúde.</p>
+    <p>Colegio padre claudio morelli</p>
+    <p>2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
